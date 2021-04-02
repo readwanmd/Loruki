@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import 'reset';
+@import 'baseStyle';
+@import 'utility';
+@import 'mixin';
+@import 'variable';
+
+body {
+	font-family: 'Lato', sans-serif;
+	color: #333;
+	line-height: 1.6;
+}
+
+.container {
+	@include container;
+}
+
+//Navbar
+.navbar {
+	background-color: $primary-color;
+	color: #fff;
+	height: 70px;
+
+	.flex {
+		justify-content: space-between;
+	}
+
+	a {
+		color: #fff;
+		padding: 10px;
+		margin: 0 5px;
+		transition: 0.3s;
+
+		&:hover {
+			border-bottom: 2px solid #fff;
+		}
+	}
+}
+
+// Showcase
+.showcase {
+	height: 400px;
+	background-color: $primary-color;
+	color: #fff;
+	position: relative;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		height: 100px;
+		bottom: -70px;
+		right: 0;
+		left: 0;
+		background: #fff;
+		transform: skewY(-4deg);
+	}
+
+	h1 {
+		font-size: 40px;
+	}
+
+	p {
+		margin: 20px 0;
+	}
+
+	.grid {
+		grid-template-columns: 55% 45%;
+		gap: 30px;
+		overflow: visible;
+	}
+
+	.showcase-form {
+		position: relative;
+		top: 60px;
+		height: 350px;
+		width: 400px;
+		padding: 40px;
+		z-index: 100;
+		justify-self: flex-end;
+
+		.form-control {
+			margin: 30px 0;
+		}
+
+		input[type='text'],
+		input[type='email'] {
+			border: 0;
+			border-bottom: 1px solid #b4becb;
+			width: 100%;
+			padding: 3px;
+			font-size: 16px;
+
+			&:focus {
+				outline: none;
+				border-bottom: 2px solid #a8b2be;
+			}
+		}
+	}
+}
+
+// Stats
+
+.stats {
+	padding-top: 100px;
+
+	.stats-heading {
+		max-width: 500px;
+		margin: auto;
+	}
+
+	.grid {
+		h3 {
+			font-size: 35px;
+		}
+
+		p {
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		& > div {
+			background-color: #fff;
+			border-radius: 10px;
+			transition: 0.2s;
+		}
+
+		& > div:hover {
+			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+		}
+	}
+}
+
+// CLI
+.cli {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+
+		& > *:first-child {
+			grid-column: 1 / span 2;
+			grid-row: 1 / span 2;
+		}
+	}
+}

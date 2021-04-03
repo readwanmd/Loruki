@@ -4,6 +4,7 @@
 @import 'utility';
 @import 'mixin';
 @import 'variable';
+@import 'animation';
 
 body {
 	font-family: 'Lato', sans-serif;
@@ -23,6 +24,10 @@ body {
 
 	.flex {
 		justify-content: space-between;
+	}
+
+	UL {
+		display: flex;
 	}
 
 	a {
@@ -70,6 +75,10 @@ body {
 		overflow: visible;
 	}
 
+	.showcase-text {
+		animation: slideInFromLeft 0.75s ease-in;
+	}
+
 	.showcase-form {
 		position: relative;
 		top: 60px;
@@ -78,6 +87,7 @@ body {
 		padding: 40px;
 		z-index: 100;
 		justify-self: flex-end;
+		animation: slideInFromRight 0.75s ease-in;
 
 		.form-control {
 			margin: 30px 0;
@@ -103,6 +113,8 @@ body {
 
 .stats {
 	padding-top: 100px;
+	z-index: 10;
+	animation: slideInFromBottom 75s ease-in;
 
 	.stats-heading {
 		max-width: 500px;
@@ -122,11 +134,13 @@ body {
 		& > div {
 			background-color: #fff;
 			border-radius: 10px;
-			transition: 0.2s;
+			transition: 0.3s;
 		}
 
 		& > div:hover {
-			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+			background-color: $primary-color;
+			color: #fff;
+			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 		}
 	}
 }
@@ -143,3 +157,113 @@ body {
 		}
 	}
 }
+
+// Cloud
+
+.cloud {
+	.grid {
+		grid-template-columns: 4fr 3fr;
+	}
+}
+
+// Languages
+.languages {
+	.card {
+		text-align: center;
+		margin: 18px 10px 40px;
+		transition: transform 0.2s ease-in;
+
+		h4 {
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+
+		&:hover {
+			transform: translateY(-15px);
+		}
+	}
+
+	.flex {
+		flex-wrap: wrap;
+	}
+}
+
+// Features
+.features-head {
+	img {
+		width: 200px;
+		justify-self: flex-end;
+	}
+}
+
+.features-sub-head {
+	img {
+		width: 250px;
+		justify-self: flex-end;
+	}
+}
+
+.features-main {
+	.card > i {
+		margin-right: 20px;
+	}
+
+	.grid {
+		padding: 30px;
+
+		& > *:nth-child(1) {
+			grid-column: 1 / span 3;
+		}
+
+		& > *:nth-child(2) {
+			grid-column: 1 / span 2;
+		}
+	}
+}
+
+// Docs
+.docs-head {
+	img {
+		width: 200px;
+		justify-self: flex-end;
+	}
+}
+
+.docs-main {
+	h3 {
+		margin: 20px 0;
+	}
+
+	.grid {
+		grid-template-columns: 1fr 2fr;
+		align-items: flex-start;
+	}
+
+	nav li {
+		font-size: 17px;
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+		border-bottom: 1px solid #ccc;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+
+	pre {
+		background: #333;
+		color: #fff;
+		padding: 10px;
+	}
+}
+
+// Footer
+.footer {
+	.social {
+		a {
+			margin: 0 10px;
+		}
+	}
+}
+
+@import 'responsiveStyle';

@@ -475,8 +475,8 @@ body {
 .stats {
   padding-top: 100px;
   z-index: 10;
-  -webkit-animation: slideInFromBottom 75s ease-in;
-          animation: slideInFromBottom 75s ease-in;
+  -webkit-animation: slideInFromBottom 0.75s ease-in;
+          animation: slideInFromBottom 0.75s ease-in;
 }
 
 .stats .stats-heading {
